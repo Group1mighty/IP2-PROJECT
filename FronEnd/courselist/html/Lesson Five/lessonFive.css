@@ -1,0 +1,145 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif; /* Modern and clean */
+  margin: 10px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif; /* Elegant and decorative */
+}
+
+.large-container {
+  display: grid;
+  grid-template-areas:
+    "title-container"
+    "video-element-container"
+    "note-container"
+    "quize-container"
+    "next-previos-container";
+  gap: 20px;
+}
+
+.title-container {
+  grid-area: title-container;
+  border-bottom: 1px solid rgb(118, 101, 101);
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.video-element-container {
+  grid-area: video-element-container;
+  border: 1px solid rgb(26, 99, 195);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width:70%;
+  margin-left: 15%;
+}
+
+.video-element-container iframe {
+  border-radius: 5px;
+  width: 100%; /* Ensure responsive sizing */
+  aspect-ratio: 16 / 9;
+}
+
+.note-container {
+  grid-area: note-container;
+  text-align: justify;
+  line-height: 1.6; /* Better readability */
+  padding: 0 10%;
+}
+
+.note-container h2 {
+  text-align: center;
+}
+
+.quize-container {
+  grid-area: quize-container;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between questions */
+  margin-bottom: 40px;
+}
+
+.question {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(26, 99, 195);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#submit,
+#submit-q2 {
+  font-size: 1.1rem;
+  /* margin: 15px auto; Center-align buttons */
+  margin: 20px 0;
+  width: 20%; /* Improved button size */
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(32, 21, 255);
+  color: white;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+
+.choice label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between radio button and text */
+}
+
+.next-previos-container {
+  grid-area: next-previos-container;
+  border-top: 1px rgb(119, 105, 105) solid;
+  display: flex;
+  padding:20px;
+  flex-direction: row nowrap;
+  justify-content: flex-start;
+  gap:20px;
+  text-align: center;
+}
+.next-previos-container a {
+    display: flex; /* Ensures the anchors behave like buttons */
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(32, 21, 255);
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold; /* Makes the text more readable */
+    transition: background-color 0.3s, color 0.3s; /* Adds smooth hover effect */
+  }
+  
+  .next-previos-container .Next {
+    background-color: rgb(32, 21, 255);
+    color: white; /* Ensures text is visible on the blue background */
+  }
+  
+  .next-previos-container a:hover {
+    background-color: rgb(101, 108, 108);
+    color: white; /* Improves visibility on hover */
+    border: none;
+  }
+  

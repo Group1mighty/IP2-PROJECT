@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduSphere Certificate</title>
+    <link rel="stylesheet" href="./certificate.css">
+    <link rel="icon" href="../../../pictures/icon/result.png">
+</head>
+<body>
+<div class="certificate">
+    <img src="../../../pictures/icon/tablogo.png" alt="eduSphere Logo" style="width: 100px; margin-bottom: 20px;">
+    <h1>Certificate of Achievement</h1>
+    <p>This certificate is awarded to students who successfully complete the course:</p>
+    <h2>Git and GitHub</h2>
+    <p>Issued by: <strong>eduSphere E-Learning Platform</strong></p>
+    <p>Date: <strong id="date">[Placeholder]</strong></p>
+    <div class="signatures">
+    <div class="signature">
+        <div class="signature-line"></div>
+        <p>Abel Teferi</p>
+        <p class="title">Founder, eduSphere</p>
+    </div>
+    </div>
+</div>
+</body>
+<script>
+    // Get the current date
+    const currentDate = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+    // Display the date in the element with id="date"
+    document.getElementById('date').textContent = formattedDate;
+</script>
+</html>
