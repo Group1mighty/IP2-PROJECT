@@ -69,7 +69,7 @@ header nav ul li a {
     transition: color 0.3s;
 }
 header nav ul li a {
-    color: #05B7EC; /* Color change on hover */
+    color: #05B7EC; 
 }
 header nav ul li a:hover {
     color: #007bff; /* Color change on hover */
