@@ -102,7 +102,7 @@ header nav ul li.dropdown {
 
 /* Dropdown menu hidden by default */
 header nav ul li .dropdown-menu {
-    display: none; /* Keep the dropdown hidden initially */
+    display: none; 
     position: absolute;
     top: 100%;
     left: 0;
