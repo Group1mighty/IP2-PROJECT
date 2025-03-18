@@ -65,8 +65,7 @@ header nav ul li a {
     text-decoration: none; /* Removes underline */
     color: #333; 
     font-weight: bold;
-    font-size: 1.4em; /* Adjust the font size as needed */
-    transition: color 0.3s;
+    font-size: 1.4em; 
 }
 header nav ul li a {
     color: #05B7EC; 
