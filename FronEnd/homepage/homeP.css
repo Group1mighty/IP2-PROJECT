@@ -168,7 +168,7 @@ header nav ul li .dropdown-menu li a:hover {
 .welcome {
     font-size: 2.3rem;/* Adjust based on visual balance */
     color: #0A88FF;
-    animation: slideIn 2s ease-in-out infinite;
+    animation: slideIn 2s ease-in-out ;
     width:100%;
 }
 
