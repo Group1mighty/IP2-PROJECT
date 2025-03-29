@@ -1,14 +1,4 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_project";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+<?php require 'db.php';
 // Fetch 4 random comments
 $sql = "SELECT username, comment_text,photo_url FROM comments ORDER BY RAND() LIMIT 4";
 $result = $conn->query($sql);

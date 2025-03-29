@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2025 at 02:58 PM
+-- Generation Time: Mar 29, 2025 at 01:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,6 +53,29 @@ INSERT INTO `comments` (`id`, `username`, `comment_text`, `created_at`, `photo_u
 (11, 'Sophia Lee', 'The course taught me how to think like a programmer. Debugging became easier after taking this course.', '2025-03-24 12:36:11', '../pictures/person.jpeg'),
 (12, 'Elijah Scott', 'Amazing learning experience! I feel ready to start my first coding job now.', '2025-03-24 12:36:11', '../pictures/person.jpeg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `created_at`) VALUES
+(1, 'abel teferi', 'abelteferi4007@gmail.com', '$2y$10$L4QyvIZfoGY6MOYC11KlZOQcMlDjhN5/ym75yPhnSuvt1ckJ2rvR2', '2025-03-29 12:21:51'),
+(2, 'basliel ', 'basliel@gmail.com', '$2y$10$u2/jP8dgygKlSJGD5oExwuWT1Uw2r1MlROLFhF2PUtucbFi1BjFh6', '2025-03-29 13:55:02'),
+(4, 'samuel', 'samuel@gmail.com', '$2y$10$Q2A6CgiVR0bFDYYkCg3.belBBgUXez8ZC/HHJDR6KO1W0ZnRtkc5S', '2025-03-29 15:44:50');
+
 --
 -- Indexes for dumped tables
 --
@@ -64,6 +87,14 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_name` (`user_name`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -72,6 +103,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
