@@ -75,6 +75,11 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `created_at`) 
 (1, 'abel teferi', 'abelteferi4007@gmail.com', '$2y$10$L4QyvIZfoGY6MOYC11KlZOQcMlDjhN5/ym75yPhnSuvt1ckJ2rvR2', '2025-03-29 12:21:51'),
 (2, 'basliel ', 'basliel@gmail.com', '$2y$10$u2/jP8dgygKlSJGD5oExwuWT1Uw2r1MlROLFhF2PUtucbFi1BjFh6', '2025-03-29 13:55:02'),
 (4, 'samuel', 'samuel@gmail.com', '$2y$10$Q2A6CgiVR0bFDYYkCg3.belBBgUXez8ZC/HHJDR6KO1W0ZnRtkc5S', '2025-03-29 15:44:50');
+(5, 'Abdrehim0013', 'abdrehimmisbah@gmail.com', '$2y$10$cClhZJBBhxYy4IzeP3cNP.09nFSVbZsFANLm3T0LbQJ...', '2025-04-09 14:14:36');
+(6, 'abdulhakimkedir', 'abdulhakimkedir@gmail.com', '$2y$10$1234567890abcdefg', NOW()),
+(7, 'abdulkerim adem', 'abdulkerimadem@gmail.com', '$2y$10$1234567890abcdefg', NOW()),
+(8, 'abeltsegaye', 'abeltsegaye@gmail.com', '$2y$10$1234567890abcdefg', NOW());
+
 
 --
 -- Indexes for dumped tables
