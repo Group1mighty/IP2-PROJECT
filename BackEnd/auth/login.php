@@ -3,7 +3,7 @@ session_start();
 $message = "";
 $message_type = "";
 
-// Check if there's a message in the session
+// Check if there is a message in the session
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];    
     $message_type = $_SESSION['message_type'];
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Query to fetch the user from the database based on email
+    // Query to fetch the user from the database based on e-mail
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
