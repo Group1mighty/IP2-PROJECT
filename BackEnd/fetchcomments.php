@@ -1,5 +1,5 @@
 <?php require 'db.php';
-// Fetch 4 random comments
+// Fetch four random comments
 $sql = "SELECT username, comment_text,photo_url FROM comments ORDER BY RAND() LIMIT 4";
 $result = $conn->query($sql);
 
