@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Sanitize email
+    // Sanitize e-mail
     $sanitizedEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-    // Validate email format
+    // Validate e-mail format
     if (!filter_var($sanitizedEmail, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['message'] = "Invalid email format.";
         $_SESSION['message_type'] = "error";
