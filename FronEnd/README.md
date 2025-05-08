@@ -75,7 +75,7 @@ eduSphere - Front-End Group Project
   . Enhance accessibility for visually impaired users.
   
   Team Members
-    [ABEL TEFERI]
+    [ABEL TEFERI (AbelTT)]
     [ABEL TSEGAY]
     [ABDULKERIM ADEM]
     [ABDULHAKIM KEDIR]
