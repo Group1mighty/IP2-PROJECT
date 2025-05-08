@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4: Introduction to GitHub</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css">
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 4: Introduction to GitHub</h1>
+      </header>
+      <section class="video-element-container">
+        <p>the video is being loaded</p>
+      </section>
+      <article class="note-container">
+        <h2>What is GitHub?</h2>
+        <ul>
+          <li>
+            <p>
+              <b>GitHub</b> is a popular online platform where you can store, manage, and collaborate on Git repositories. 
+              It acts like a bridge between developers, enabling them to share their code, track changes, and work together 
+              efficiently on projects.
+            </p>
+          </li>
+          <li>
+            <p>
+              Think of GitHub as a digital workspace for developers. It provides tools to organize and maintain code 
+              projects, whether you're working solo or with a team.
+            </p>
+          </li>
+        </ul>
+        <h2>Key Steps to Use GitHub</h2>
+        <ul>
+          <li>
+            <p>
+              <b>1. Create a GitHub Account:</b> 
+              Visit <a href="https://github.com" target="_blank">GitHub</a> and sign up for a free account. It's the first step to getting started with GitHub.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>2. Create a New Repository:</b> 
+              A repository is where your project lives on GitHub. To create one:
+              <ol>
+                <li>Log in to your GitHub account.</li>
+                <li>Click the green <b>"New"</b> button in the repositories section.</li>
+                <li>Provide a name for your repository (e.g., "MyFirstRepo").</li>
+                <li>Choose visibility (Public or Private) and click <b>"Create Repository."</b></li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>3. Link Your Local Git Repository to GitHub:</b>
+              Use the command below in your terminal to link your local repository with the GitHub repository:
+              <pre>
+git remote add origin https://github.com/username/repository.git
+              </pre>
+              Replace <b>username</b> with your GitHub username and <b>repository</b> with your repository name.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>4. Push Your Changes to GitHub:</b> 
+              Once your work is ready, push it to GitHub with the following command:
+              <pre>
+git push -u origin main
+              </pre>
+              This uploads your changes to the <b>main</b> branch of the GitHub repository.
+            </p>
+          </li>
+        </ul>
+        <h2>Practical Exercise</h2>
+        <ul>
+          <li>
+            <p><b>Step 1:</b> Create a new repository on GitHub.</p>
+          </li>
+          <li>
+            <p><b>Step 2:</b> Initialize a local Git repository, add some code, and commit your changes.</p>
+          </li>
+          <li>
+            <p><b>Step 3:</b> Link the local repository to your GitHub repository using the <code>git remote add</code> command.</p>
+          </li>
+          <li>
+            <p><b>Step 4:</b> Push your changes to GitHub using <code>git push</code>.</p>
+          </li>
+          <li>
+            <p><b>Step 5:</b> Open GitHub and view your uploaded project.</p>
+          </li>
+        </ul>
+        <p>
+          Once you complete these steps, your code will be safely stored online, accessible from anywhere, and 
+          ready for collaboration.
+        </p>
+      </article>
+      <section class="quize-container">
+        
+      </section>
+      <nav class="next-previos-container">
+        <a href="" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span> Previous</span>
+        </a>
+        
+        <a href="" class="Next">
+          <span> Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        
+      </nav>
+    </main>
+    <script src="lessonFour.js"></script>
+  </body>
+</html>

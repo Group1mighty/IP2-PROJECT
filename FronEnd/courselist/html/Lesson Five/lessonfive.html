@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 5: Creating Links</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css">
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 5: Creating Links</h1>
+      </header>
+      <section class="video-element-container">
+        
+      </section>
+      <article class="note-container">
+        <h2>Understanding Hyperlinks</h2>
+        <ul>
+          <li>
+            <p>
+              Hyperlinks, or links, allow users to navigate between web pages or sections of a page. They are essential for creating an interconnected and user-friendly web experience. There are three main types of links:
+              <ul>
+                <li><b>External Links:</b> Direct users to other websites by using absolute URLs (e.g., <code>https://example.com</code>).</li>
+                <li><b>Internal Links:</b> Navigate to other pages within the same website using relative paths (e.g., <code>about.html</code>).</li>
+                <li><b>Anchor Links:</b> Jump to specific sections on the same page by referencing an element’s ID (e.g., <code>#section-id</code>).</li>
+              </ul>
+              Using these types of links appropriately ensures smooth navigation and enhances user experience.
+            </p>
+          </li>
+        </ul>
+        <h2>How to Create Links</h2>
+        <ul>
+          <li>
+            <p><b>Basic Syntax:</b> Links are created using the <code>&lt;a&gt;</code> (anchor) tag in HTML. The <code>href</code> attribute specifies the destination URL.</p>
+            <pre>
+  &lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+            </pre>
+            <p><b>Example:</b> Clicking the link above will open the "Example" website in the browser.</p>
+          </li>
+          <li>
+            <p><b>Open in New Tab:</b> Use the <code>target="_blank"</code> attribute to open a link in a new tab.</p>
+            <pre>
+  &lt;a href="https://example.com" target="_blank"&gt;Open Example in a New Tab&lt;/a&gt;
+            </pre>
+            <p>This is useful for external links, ensuring users remain on your site while exploring other resources.</p>
+          </li>
+          <li>
+            <p><b>Anchor Links:</b> Link to specific sections within the same page by using IDs and the <code>#</code> symbol.</p>
+            <pre>
+  &lt;a href="#contact-section"&gt;Go to Contact&lt;/a&gt;
+  ...
+  &lt;div id="contact-section"&gt;Contact Us&lt;/div&gt;
+            </pre>
+            <p>This allows users to jump to the "Contact Us" section of the page.</p>
+          </li>
+        </ul>
+        <h2>Practical Exercise</h2>
+        <ul>
+          <li>
+            <p>
+              <b>Step 1:</b> Create an external link to a favorite website.
+              <pre>
+  &lt;a href="https://www.wikipedia.org" target="_blank"&gt;Visit Wikipedia&lt;/a&gt;
+              </pre>
+              <p>This link opens the Wikipedia homepage in a new tab.</p>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Step 2:</b> Create an internal link to another page on your website.
+              <pre>
+  &lt;a href="about.html"&gt;Learn More About Us&lt;/a&gt;
+              </pre>
+              <p>Ensure the file name matches the destination page on your server or local project folder.</p>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Step 3:</b> Add an anchor link to a specific section within a page.
+              <pre>
+  &lt;a href="#services"&gt;See Our Services&lt;/a&gt;
+  ...
+  &lt;section id="services"&gt;Our Services&lt;/section&gt;
+              </pre>
+              <p>Clicking this link scrolls the page directly to the "Services" section.</p>
+            </p>
+          </li>
+        </ul>
+        <p style="color:black">
+          By mastering hyperlinks, you can build structured, easy-to-navigate websites. Experiment with these techniques to enhance the user experience. 😊
+        </p>
+      </article>
+      
+      <section class="quize-container">
+      
+      </section>
+      <nav class="next-previos-container">
+        <a href="../Lesson Four/lessonfour.html" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span> Previous</span>
+        </a>
+        <a href="../Test/GitTest.html" class="Nexttoquiz" target="_blank">
+          <span> proceed to the test</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonFive.js"></script>
+  </body>
+</html>

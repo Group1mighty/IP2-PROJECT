@@ -1,0 +1,947 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+body{
+    background-color: #E1ECF9;
+    width:100vw;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Start completely off screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+/*--------------------------header-------------------------------------------------*/
+/* General header styling */
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #E1ECF9; /* Adjust  background color as needed */
+    width:100%;
+    height:auto;
+    margin-top:15px;
+    position: relative;
+}
+
+/* Logo styling */
+header .Clogo {
+    width: 155px; /* Adjust based  your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+
+/* Navigation styling */
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+    margin-right: 25px;
+}
+
+/* Styling each list item and link */
+header nav ul li {
+    margin: 0 40px 0 0;
+
+}
+
+header nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #333; 
+    font-weight: bold;
+    font-size: 1.4em; 
+}
+header nav ul li a {
+    color: #05B7EC; 
+}
+header nav ul li a:hover {
+    color: #007bff; /* Color change on hover */
+}
+
+/* Button styling */
+header nav ul button {
+    background-color: #545E75; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width:100%;
+    font-size: 1em;
+}
+header nav ul button a{
+    color:white;
+}
+header nav ul button:hover {
+    background-color: #545e7585; /* Darker color on hover */
+}
+/* Dropdown styles */
+header nav ul li.dropdown {
+    position: relative; /* Needed for positioning the dropdown */
+}
+
+/* Dropdown menu hidden by default */
+header nav ul li .dropdown-menu {
+    display: none; 
+    position: absolute;
+    
+    top: 100%;
+    left: 0;
+    background-color: #E1ECF9; /* Matching the header background */
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width:250px;
+}
+
+/* Dropdown menu item styling */
+header nav ul li .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul li .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+header nav ul li .dropdown-menu li a {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+header nav ul li .dropdown-menu li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/*---------------------------hero section-------------------------------------------------*/
+#banner {
+    padding: 150px 0px 50px 0px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height:1000px;
+    font-family: 'Poppins', sans-serif;
+}
+.banner-content {
+    width: 40%; /* Adjust width for better alignment */
+    height:90%;
+    padding-left:0; 
+    padding-top:100px;
+}
+
+
+.bannerPic {
+    width:50%;
+    align-self: center;
+    object-fit: contain;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+.welcome {
+    font-size: 2.3rem;/* Adjust based on visual balance */
+    color: #0A88FF;
+    animation: slideIn 2s ease-in-out ;
+    width:100%;
+}
+
+#banner p {
+    font-size: 2.2rem;
+    line-height: 1.5;
+    width: 100%;
+    color:#304D6D;
+}
+.cta-button{
+    background-color: #545E75; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size:1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    width:100%;
+    height:75px;
+}
+.cta-button:hover {
+    background-color: #545e7585; /* Darker color on hover */
+}
+.cta-button a{
+    color:white;
+    text-decoration: none;
+}
+.cta-button a:hover {
+    color: #007bff; /* Color change on hover */
+}
+.but{
+    background-color: blue;
+    width:75px;
+    height: 75px;
+}
+
+/*-------------------------how it works section----------------------------------------*/
+#how-it-works{
+    padding: 50px;
+    height:1200px;
+    font-family: 'Poppins', sans-serif;
+}
+#how-it-works h2{
+    text-align: center;
+    font-size: 3.5em;
+    color: #0A88FF;
+}
+.steps{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*align-items: center;*/
+    height:60%;
+    padding-top:10%;
+}
+
+.step{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width:30%;
+    background-color: rgba(255, 255, 255, 0.753);
+    padding:55px 0 0 0;
+    border-radius: 25px;
+}
+.step:hover{
+    transform: scale(1.1); /* Slight zoom on hover */
+    transition: transform 0.5s ease;
+}
+.stepPic{
+    width:55%;
+    height:57%;
+    object-fit: contain;
+}
+.step h3{
+    font-size:3em;
+}
+.step p{
+    background-color:#A7CCED;
+    font-size: 2em;
+    color: #304D6D;
+    text-align: center;
+    padding:20px;
+    margin:0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+/*-------------------------testimonials section----------------------------------------*/
+#testimonials{
+    padding: 50px 0;
+    height:1200px;
+    width:100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #C4CFD9;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items:center;
+
+}
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+    grid-gap: 50px 20%; /* Space between the boxes */
+    justify-content:stretch ; /* Center the grid within the container */
+    align-items: stretch; /* Vertically align items */
+    padding: 20px; /* Optional: Add padding around the grid*/
+    width:80%;
+    height:65%;
+}
+#testimonials h2{
+    text-align: center;
+    font-size: 2.5em;
+    color: #0A88FF;
+    padding-top:20px;
+}
+.testimonial{
+    height:100%;
+    background-color:#D5E1EC;
+    width:100%;
+    border-radius: 15px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better appearance */
+}
+.testimonial .personel{
+    display:inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.testimonial .personel .name{
+    text-align: center;
+}
+.testimonial .review{
+    width:65%;
+}
+.testimonial .review h4{
+    font-size: 1.5em;
+    color: #0A88FF;
+    margin-bottom: 0;
+}
+.testimonial .review{
+    display:inline;
+}
+.testimonial .personel .name{
+    font-weight: bold;
+    font-size: 1.1em;
+    color:black;
+}
+.testimonial .review p{
+    font-size: 1.1em;
+}
+.testimonial .person {
+    width: 150px; /* Resize images to fit nicely in the smaller boxes */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px; /* Center the image and add some spacing below */
+}
+/*------------------------------------the edu sphere advantage section---------------------------------------*/
+#advantage{
+    font-family: 'Poppins', sans-serif;
+    height:3600px;
+}
+#advantage h2{
+    text-align: center;
+    font-size: 3.5em;
+    color: #0A88FF;
+    margin-bottom:100px;
+}
+#advantage .a{
+    height:1200px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#advantage .advantage-item{
+    height:1090px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.advantage-item{
+    height:1200px;
+}
+.advantage-item h3{
+    color: #0A88FF;
+    font-size: 2.2em;
+}
+.advantage-item p{
+    font-size: 1.7em;
+    height:200px;
+    width:90%;
+}
+.advantage-item .discription{
+    width:25%;
+    height:100%;
+}
+.advantage-item .pic{
+    height:100%;
+    width:37%;
+}
+.advantage-item .pic .advPerson{
+    border-radius: 100px;
+    width: 70%;
+    height: 50%;
+}
+.advantage-item .discription{
+    height:800px;
+}
+.adv_logo{
+    height: 197px;
+    width: 189px;
+    border-radius: 65px;
+    object-fit: contain;
+}
+.pic {
+    position: relative;
+    margin-top:150px; /* Enable relative positioning for child images */
+}
+.advantage-item  .pic .advPerson1 {
+    position: absolute; 
+    top: 5%;
+    right:0; 
+    z-index: 1; 
+    object-fit:cover;
+}
+.advantage-item .pic .advPerson2 {
+    position: absolute; 
+    top: 30%; 
+    left: 0; 
+    z-index: 2; 
+    object-fit:cover;
+}
+.b .discription{
+    padding-left:85px;
+}
+.b .pic .advPerson1{
+    position: absolute; /* Allow precise placement */
+    top: 50px; /* Align to the top of the container */
+    right:0; /* Align to the left of the container */
+    z-index: 1; /* Place it behind the second image */
+}
+.b .pic .advPerson2{
+    position: absolute; /* Allow precise placement */
+    top: 280px; /* Slightly shift down to create overlap */
+    left: 0; /* Move to the right for partial overlay */
+    z-index: 2; /* Ensure this image appears on top */
+}
+/*----------------------------------------------------cta section------------------------------------------------------*/
+#cta{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 518px;
+    background:linear-gradient(90deg,#63ADF2,#122545);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.cta-content img{
+    width:182px;
+    height: 235px;
+    object-fit: contain;
+}
+.cta-content{
+    height: 364px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #E1ECF9;
+    width:70%;
+}
+.cta-text{
+    width:50%;
+}
+.cta-text h2 {
+    height:30%;
+    margin:0;
+    color:#007bff;
+    padding-bottom:30px;
+    font-size:2.7em;
+}
+.cta-text p{
+    height:60%;
+    font-size: 1.5em;
+    color: #304D6D;
+    margin:0;
+    width:95%;
+    font-size:2.0em;
+}
+.cta-button2{
+    background-color: #545E75; /* Primary button color */
+    color: white;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width:25%;
+    height:66px;
+    border-radius: 30px;
+}
+.cta-button2 a{
+    text-decoration: none;
+    color: white;
+    font-size: 2.0em;
+}
+.cta-button2:hover {
+    background-color: #545e7585;
+}
+
+.cta-button2 a:hover{
+    color:#007bff;
+}
+/*-----------------------------------------courses section--------------------------------------*/
+/* Section Styles */
+#courses-section {
+    padding: 60px 20px;
+    background-color: white;
+    text-align: center;
+    height:758px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#courses-section h2 {
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    position: relative;
+    text-align: center;
+    font-size: 3.5em;
+    color: #0A88FF;
+}
+
+#courses-section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #0078d7;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Course Card Styles */
+.course-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    height:350px;
+    width:95%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.course-card img{
+    height: 100px;
+    object-fit: contain;
+}
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.course-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 2.2rem;
+    color: #0078d7;
+    margin: 10px 0;
+}
+
+.course-card p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 10px 0 20px;
+}
+
+.learn-more {
+    background-color: #0078d7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn-more:hover {
+    background-color: #005bb5;
+}
+
+/* View All Courses Button */
+.view-all-courses {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    background-color: #0078d7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+    width:23%;
+}
+
+.view-all-courses:hover {
+    background-color: #005bb5;
+}
+
+/*-----------------------------------------about section--------------------------------------*/
+#about{
+    height:1200px;
+    background-image:linear-gradient(90deg,rgba(10,136,255,59%),rgba(10,136,255,59%)),url(../pictures/girl-writing-on-the-sofa-picjumbo-com.jpg);
+    /*background-attachment: fixed;*/
+    background-position: center;/*centers the background image*/
+    background-size: cover;/*ensures the image covers the entire background*/
+    font-family: 'Poppins', sans-serif;
+    padding-top: 150px;
+}
+#about h3{
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+}
+#about .aboutContent{
+    display:flex;
+    justify-content: space-evenly;
+}
+.aboutContent p{
+    width:30%;
+    color:white;
+    font-size: 2.2em;
+}
+.aboutContent img{
+    width:890px;
+    height:804px;
+    object-fit: cover;
+    border-radius: 40px;
+    filter: brightness(0.9) contrast(1) saturate(1);
+}
+/*--------------------------------------------footer section--------------------------------------*/
+footer{
+    background-color: #142747;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    height:381px;
+}
+footer .Clogo {
+    width: 130px; /* Adjust based on your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+.socials{
+    padding-left:30px;
+}
+.socials img{
+    width:42px;
+    height:42px;
+    padding-right: 5px;
+}
+footer p{
+    font-size:1.5em;
+    padding-left:30px;
+}
+footer .mailpic{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+footer .mail{
+    color:white;
+    text-decoration: underline;
+}
+/*----------------------------------------back to the top button--------------------------------*/
+.back-to-top {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #0078d7;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-align: center;
+    font-style: bold;
+    text-decoration: none;
+    font-size: 25px;
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #005bb5;
+    color: #fff;
+}
+
+/*-------------------------media queries----------------------------------------*/ 
+@media screen and (max-width: 1150px) {
+    /* Stack the logo and navigation items vertically */
+    /*header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }*/
+    
+    /*header .Clogo {
+        width: 120px; /* Resize the logo
+        height: auto;
+        margin-bottom: 15px;
+    }*/
+
+    /* Adjust navigation items */
+   /* header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+    }*/
+
+    /*header nav ul li {
+        margin: 10px 0; /* Space between menu items 
+    }*/
+
+    header nav ul li a {
+        font-size: 1.2em; 
+    }
+
+    header nav ul button {
+        width: 100%; 
+        padding: 12px 20px;
+    }
+    header nav ul button a{
+        font-size: 1.2em;
+    }
+    header nav ul li.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    header nav ul li .dropdown-menu li a {
+        font-size: 1.2em;
+    }
+    .banner-content h1{
+        font-size: 1.8em;
+    }
+    .banner-content .content_p{
+        font-size:1.79em !important;
+    }
+    .banner-content .cta-button a{
+        font-size:0.9em;
+    }
+    #how-it-works h2{
+        font-size: 2.8em;
+    }
+    #how-it-works p{
+        font-size: 1.5em;
+    }
+    #how-it-works h3{
+        font-size: 2.2em;
+    }
+    #how-it-works .stepPic{
+        width:70%;
+        height:70%;
+    }
+    #testimonials h2{
+        font-size: 2.8em;
+    }
+    .testimonial .person{
+        width: 100px; /* Resize images to fit nicely in the smaller boxes */
+        height: 100px;
+    }
+    .testimonial .personel .name
+    {
+        font-size: 0.8em;
+    }
+    .advantage-item .discription p{
+        font-size: 1.5em;
+    }
+    .advantage-item .discription h3
+    {
+        font-size: 2em;
+    }
+    .advantage-item .pic .advPerson, .advPerson1
+    {
+        object-fit: fill;
+    }
+    .advantage-item .pic .advPerson1
+    {
+        object-fit: fill;
+    }
+    #cta .cta-content .cta-text h2
+    {
+        font-size: 1.8em;
+    }
+    #cta .cta-content .cta-text p
+    {
+        font-size: 1.2em;
+    }
+    .cta-content img{
+        width: 80px;
+        height: 80px;
+    }
+    .cta-content button
+    {
+        width:20%;
+    }
+    .cta-content button a
+    {
+        font-size: 1.5em;
+    }
+    #courses-section h2{
+        font-size: 2.8em;
+    }
+    .courses-grid h3{
+        font-size: 1.5em;
+    }
+    .course-card p{
+        font-size: 1em;
+    }
+
+    .view-all-courses{
+        font-size: 1.2em;
+    }
+    .learn-more{
+        font-size: 1em;
+    }
+    #footer p{
+        font-size:1.2em;
+    }
+}
+
+/* For mobile devices with width 480px or less */
+@media screen and (max-width: 955px) {
+
+    header nav ul li a {
+        font-size: 1em; 
+    }
+
+    header nav ul button {
+        width: 100%; 
+        padding: 12px 20px;
+    }
+    header nav ul button a{
+        font-size: 1em;
+    }
+    header nav ul li.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    header nav ul li .dropdown-menu li a {
+        font-size: 1em;
+    }
+    .banner-content h1{
+        font-size: 1.5em;
+    }
+    .banner-content .content_p{
+        font-size:1.59em !important;
+    }
+    .banner-content .cta-button a{
+        font-size:0.8em;
+    }
+    #how-it-works h2{
+        font-size: 2.3em;
+    }
+    #how-it-works p{
+        font-size: 1.1em;
+    }
+    #how-it-works h3{
+        font-size: 1.8em;
+    }
+    .testimonial .review p{
+        font-size: 0.8em;
+    }
+    .testimonials-container{
+        height:55%;
+    }
+    .advantage-item .discription p{
+        font-size: 1.2em;
+    }
+    .advantage-item .discription h3
+    {
+        font-size: 1.7em;
+    }
+    .cta-content button
+    {
+        height:56px;
+    }
+}
+@media screen and (max-width: 1491px)
+{
+    .testimonial .review{
+        width:55%;
+    }
+} 
+@media screen and (max-width: 1379px)
+{
+    .testimonial .review{
+        font-size: 0.8em;
+    }
+} 
+@media screen and (max-width: 1685px) 
+{
+    #cta .cta-content .cta-text h2
+    {
+        font-size: 2em;
+    }
+    #cta .cta-content .cta-text p
+    {
+        font-size: 1.5em;
+    }
+    .cta-content img{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 2114px)
+{
+    #about .aboutContent p{
+        font-size: 2.1em;
+    }
+}
+@media screen and (max-width: 1875px)
+{
+    #about .aboutContent p{
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 1717px)
+{
+    #about .aboutContent p{
+        font-size: 1.8em;
+    }
+}
+@media screen and (max-width: 1498px)
+{
+    .aboutContent img{
+        width:690px;
+        height:704px;
+    }
+}
+@media screen and (max-width: 1172px)
+{
+    .aboutContent img{
+        width:590px;
+        height:604px;
+    }
+    #about .aboutContent p{
+        font-size: 1.5em;
+    }
+    #about h3
+    {
+        font-size: 2em;
+    }
+}
+

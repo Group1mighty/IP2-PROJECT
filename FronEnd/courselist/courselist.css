@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height:100vh;
+    background-color: #E1ECF9; 
+    color: #333;
+}
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #E1ECF9; /* Adjust the background color as needed */
+    width:100%;
+    height:auto;
+    margin-top:15px;
+}
+
+/* Logo styling */
+header .Clogo {
+    width: 155px; /* Adjust based on your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+
+/* Navigation styling */
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+    margin-right: 25px;
+}
+
+/* Styling each list item and link */
+header nav ul li {
+    margin: 0 40px 0 0;
+
+}
+
+header nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Choose a color for the text */
+    font-weight: bold;
+    font-size: 1.4em; /* Adjust  font size as needed */
+    transition: color 0.3s;
+}
+header nav ul li a {
+    color: #05B7EC; /* Color change on hover */
+}
+header nav ul li a:hover {
+    color: #007bff; /* Color change on hover */
+}
+
+/* Button styling */
+header nav ul button {
+    background-color: #545E75; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width:250px;
+    font-size: 1em;
+}
+header nav ul button a{
+    color:white;
+}
+header nav ul button:hover {
+    background-color: #545e7585; /* Darker color on hover */
+}
+/* Dropdown styles */
+header nav ul li.dropdown {
+    position: relative; /* Needed for positioning the dropdown */
+}
+
+/* Dropdown menu hidden by default */
+header nav ul li .dropdown-menu {
+    display: none; /* Keep the dropdown hidden initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #E1ECF9; /* Matching the header background */
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width:250px;
+}
+
+/* Dropdown menu item styling */
+header nav ul li .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul li .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+header nav ul li .dropdown-menu li a {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-decoration: none;
+    display: block;
+    padding: 7px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+header nav ul li .dropdown-menu li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+main{
+    margin:150px 100px;
+}
+.container {
+    margin: 20px auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 230px;
+    color: #007bff;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    align-items: center;
+    padding: 0 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+}
+.course-card:hover{
+    transform: scale(1.1); /* Slight zoom on hover */
+    transition: transform 0.5s ease;
+}
+.course-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.course-content {
+    margin:20px;
+}
+
+.course-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.course-description {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #0056b3;
+} 
+footer{
+    background-color: #142747;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    height:380px;
+}
+footer .Clogo {
+    width: 130px; /* Adjust based on your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+.socials{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    padding-left:30px;
+}
+.socials img{
+    width:42px;
+    height:42px;
+    padding-right: 5px;
+}
+.socials a {
+    text-decoration: none; 
+    font-size: 35px; 
+    transition: transform 0.5s ease-in; 
+
+}
+
+/* Facebook Icon */
+.socials a:nth-child(1) i {
+    color: #4267B2; 
+}
+
+/* Instagram Icon */
+.socials a:nth-child(2) i {
+    color: #E4405F; 
+}
+
+/* Twitter/X Icon */
+.socials a:nth-child(3) i {
+    color: #1DA1F2; 
+}
+
+/* YouTube Icon */
+.socials a:nth-child(4) i {
+    color: #FF0000; 
+}
+
+/* Hover Effect (Same for All Icons) */
+.socials a:hover i {
+    transform: scale(1.5); 
+   
+}
+
+
+footer p{
+    font-size:1.5em;
+    padding-left:30px;
+}
+footer .mailpic{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+footer .mail{
+    color:white;
+    text-decoration: underline;
+}
+footer .a{
+    color:white;
+    text-decoration: none;
+}
+
+
+  /* For mobile phones: less than 768px width and tablet  */
+  @media (max-width: 1024px) {
+    .container {
+      flex-flow: column nowrap;
+      gap:40px;
+    }
+  }
+  

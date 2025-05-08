@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E1ECF9; 
+    color: #333;
+}
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #E1ECF9; 
+    width:100%;
+    height:auto;
+    margin-top:15px;
+}
+
+/* Logo styling */
+header .Clogo {
+    width: 155px; /* Adjust based on your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+
+/* Navigation styling */
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+    margin-right: 25px;
+}
+
+/* Styling each list item and link */
+header nav ul li {
+    margin: 0 40px 0 0;
+
+}
+
+header nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Choose a color for the text */
+    font-weight: bold;
+    font-size: 1.4em; /* Adjust the font size as needed */
+    transition: color 0.3s;
+}
+header nav ul li a {
+    color: #05B7EC; /* Color change on hover */
+}
+header nav ul li a:hover {
+    color: #007bff; /* Color change on hover */
+}
+
+/* Button styling */
+header nav ul button {
+    background-color: #545E75; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width:250px;
+    font-size: 1em;
+}
+header nav ul button a{
+    color:white;
+}
+header nav ul button:hover {
+    background-color: #545e7585; /* Darker color on hover */
+}
+/* Dropdown styles */
+header nav ul li.dropdown {
+    position: relative; /* Needed for positioning the dropdown */
+}
+
+/* Dropdown menu hidden by default */
+header nav ul li .dropdown-menu {
+    display: none; /* Keep the dropdown hidden initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #E1ECF9; /* Matching the header background */
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width:250px;
+}
+
+/* Dropdown menu item styling */
+header nav ul li .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul li .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 150px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#welcome{
+    color: #007bff;
+    font-size:1.5em;
+    text-align:center;
+}
+.back {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content:right;
+}
+
+.back a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.lesson-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lesson-list li {
+    font-size: 16px;
+    margin: 30px 0;
+    background-color:#304D6D;
+    color:white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gotolesson {
+    text-decoration: none;
+    display:flex;
+    justify-content: right;
+    padding:0;
+}
+.gotolesson a{
+    color: #05B7EC;
+    text-decoration: none;
+}
+footer{
+    background-color: #142747;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    height:380px;
+}
+footer .Clogo {
+    width: 130px; /* Adjust based on your image size */
+    height: 123px;
+    /*aspect-ratio:4/3;*/
+    object-fit: contain;
+}
+.socials{
+    padding-left:30px;
+}
+.socials img{
+    width:42px;
+    height:42px;
+    padding-right: 5px;
+}
+footer p{
+    font-size:1.5em;
+    padding-left:30px;
+}
+footer .mailpic{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+footer .mail{
+    color:white;
+    text-decoration: underline;
+}
+footer .a{
+    color:white;
+    text-decoration: none;
+}

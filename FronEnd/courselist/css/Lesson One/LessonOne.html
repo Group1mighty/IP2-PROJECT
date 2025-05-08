@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 1: Introduction to CSS</title>
+    <link rel="stylesheet" href="lessonOne.css" />
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <header>
+      <a href="homeP.html" target="_blank"><img src="../../../pictures/icon/result.png" class="Clogo"></a>
+      <nav>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Courses</a></li>
+          </ul>
+      </nav>
+  </header>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 1: Introduction to CSS</h1>
+      </header>
+      <section class="video-element-container">
+      </section>
+      <article class="note-container">
+        <h2>Introduction to CSS</h2>
+        <ul>
+          <li>
+            <p>
+              <b>CSS (Cascading Style Sheets)</b> is a language used to describe the presentation of a web page written in HTML or XML. It controls the layout, colors, fonts, and overall appearance of a webpage.
+            </p>
+          </li>
+          <li>
+            <p>
+              The main purpose of CSS is to separate content (HTML) from design (CSS). This helps with maintenance, as changes in design can be applied universally without affecting the structure of the web page.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>How does CSS work with HTML?</b> 
+              <ul>
+                <li>CSS rules are made up of selectors and declarations.</li>
+                <li>Selectors target HTML elements, and declarations specify how the elements should be styled.</li>
+                <li>For example, <code>p { color: blue; }</code> changes the text color of paragraph elements to blue.</li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Ways to apply CSS to HTML:</b>
+              <ul>
+                <li><b>Inline CSS:</b> Adding CSS directly to HTML elements using the <code>style</code> attribute. like <code>&lt;p style="color: red;"&gt;</code>.</li>
+                <li><b>Internal CSS:</b> Placing CSS within the <code>&lt;style&gt;</code> tag inside the HTML document's <code>&lt;head&gt;</code> section. like <code>&lt;style&gt; p { color: red; } &lt;/style&gt;</code>.</li>
+                <li><b>External CSS:</b> Linking to an external stylesheet using the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> section. like <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>.</li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>CSS Syntax:</b> 
+              <ul>
+                <li><b>Selector:</b> The HTML element you want to style.</li>
+                <li><b>Property:</b> The aspect of the element you want to change (e.g., color, font-size, margin).</li>
+                <li><b>Value:</b> The setting for the property (e.g., red, 12px, 10px).</li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+        <h2>Practical Exercise</h2>
+        <ul>
+          <li>
+            <p><b>Step 1:</b> Create a simple HTML file with a heading and paragraph.</p>
+          </li>
+          <li>
+            <p>
+              <b>Step 2:</b> Apply CSS styles to the elements using inline, internal, or external methods.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Step 3:</b> Experiment with different properties like <code>color</code>, <code>background-color</code>, <code>font-size</code>, and <code>margin</code> to see how they affect the webpage.
+            </p>
+          </li>
+        </ul>
+      </article>
+      <section class="quize-container">
+        
+      </section>
+      <nav class="next-previos-container">
+        <a href="" class="Next">
+          <span>Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonOne.js"></script>
+  </body>
+</html>

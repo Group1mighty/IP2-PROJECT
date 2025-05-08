@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+body{
+    background-color: #E1ECF9; 
+    font-family: 'Poppins', sans-serif;
+}
+#quiz-form{
+    grid-area: quize-container;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add spacing between questions */
+    margin-bottom: 40px;
+}
+h1{
+    text-align: center;
+    color: #007bff; 
+    margin:80px;
+}
+section{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(26, 99, 195);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+input[type="radio"]{
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+}
+form h2{
+    color: #007bff; 
+}
+
+#submit, #submit-q2 {
+    font-size: 1.1rem;
+    margin: 20px 20px;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(32, 21, 255);
+    color: white;
+    cursor: pointer;
+}
+/*--------------------------------------------------------------------result container----------------------------------------------------------*/
+body {
+    margin: 0;
+}
+
+
+#result-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 1000;
+}
+
+#result {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+/*------------------------------------timer------------------------------------*/
+#timer {
+    position: fixed; /* Keeps it fixed on the screen */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+    font-size: 20px; /* Adjust font size as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: adds a background for readability */
+    color: white; /* Text color */
+    padding: 10px; /* Padding for better spacing */
+    border-radius: 5px; /* Optional: rounded corners */
+}

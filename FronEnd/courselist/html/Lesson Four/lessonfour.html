@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4: Working with Images</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css">
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 4: Working with Images</h1>
+      </header>
+      <section class="video-element-container">
+        
+      </section>
+      <article class="note-container">
+        <h2>Adding Images in HTML</h2>
+        <ul>
+          <li>
+            <p>
+              The `<img>` tag is used to embed images in HTML. It is a self-closing tag and requires the following attributes:
+              <ul>
+                <li><b>src:</b> Specifies the path to the image file (e.g., <code>src="image.jpg"</code>).</li>
+                <li><b>alt:</b> Provides alternative text for the image, improving accessibility and SEO.</li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Example:
+              <pre><code>&lt;img src="example.jpg" alt="Example Image"&gt;</code></pre>
+            </p>
+          </li>
+        </ul>
+        <h2>Resizing and Styling Images</h2>
+        <ul>
+          <li>
+            <p>
+              You can adjust the size of an image using the following:
+              <ul>
+                <li><b>HTML attributes:</b> Use <code>width</code> and <code>height</code> attributes directly inside the `<img>` tag.</li>
+                <li><b>CSS:</b> Use the <code>width</code> and <code>height</code> properties in your stylesheet for more control.
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Example with CSS:
+              <pre><code>
+&lt;img class="responsive" src="image.jpg" alt="Responsive Image"&gt;
+&lt;style&gt;
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+&lt;/style&gt;
+              </code></pre>
+            </p>
+          </li>
+        </ul>
+        <h2>Practical Exercise</h2>
+        <ul>
+          <li>
+            <p><b>Step 1:</b> Add an image of your choice to your HTML page using the `<img>` tag.</p>
+          </li>
+          <li>
+            <p><b>Step 2:</b> Resize the image using both HTML attributes and CSS styles.</p>
+          </li>
+          <li>
+            <p><b>Step 3:</b> Add descriptive <code>alt</code> text to improve accessibility.</p>
+          </li>
+        </ul>
+      </article>
+      <section class="quize-container">
+        
+      </section>
+      <nav class="next-previos-container">
+        <a href="" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span> Previous</span>
+        </a>
+        <a href="" class="Next">
+          <span> Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonFour.js"></script>
+  </body>
+</html>

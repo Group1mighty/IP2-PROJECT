@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 10px;
+  background-color: #E1ECF9;
+}
+header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  background-color: #E1ECF9; 
+  width:100%;
+  height:auto;
+  margin-top:15px;
+}
+
+/* Logo styling */
+header .Clogo {
+  width: 155px; /* Adjust based on your image size */
+  height: 123px;
+  /*aspect-ratio:4/3;*/
+  object-fit: contain;
+}
+
+/* Navigation styling */
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0;
+  margin-right: 25px;
+}
+
+/* Styling each list item and link */
+header nav ul li {
+  margin: 0 40px 0 0;
+
+}
+
+header nav ul li a {
+  text-decoration: none; /* Removes underline */
+  color: #333; /* Choose a color for the text */
+  font-weight: bold;
+  font-size: 1.4em; /* Adjust the font size as needed */
+  transition: color 0.3s;
+}
+header nav ul li a {
+  color: #05B7EC; /* Color change on hover */
+}
+header nav ul li a:hover {
+  color: #007bff; /* Color change on hover */
+}
+
+/* Button styling */
+header nav ul button {
+  background-color: #545E75; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:250px;
+  font-size: 1em;
+}
+header nav ul button a{
+  color:white;
+}
+header nav ul button:hover {
+  background-color: #545e7585; /* Darker color on hover */
+}
+/* Dropdown styles */
+header nav ul li.dropdown {
+  position: relative; /* Needed for positioning the dropdown */
+}
+
+/* Dropdown menu hidden by default */
+header nav ul li .dropdown-menu {
+  display: none; /* Keep the dropdown hidden initially */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #E1ECF9; /* Matching the header background */
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width:250px;
+}
+
+/* Dropdown menu item styling */
+header nav ul li .dropdown-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+header nav ul li .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+header nav ul li .dropdown-menu li a {
+  color: #333;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+header nav ul li .dropdown-menu li a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif; /* Elegant and decorative */
+  color: #007bff;
+}
+
+.large-container {
+  display: grid;
+  grid-template-areas:
+    "title-container"
+    "video-element-container"
+    "note-container"
+    "quize-container"
+    "next-previos-container";
+  gap: 20px;
+}
+
+.title-container {
+  grid-area: title-container;
+  border-bottom: 1px solid rgb(118, 101, 101);
+  padding-bottom: 10px;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
+
+.video-element-container {
+  grid-area: video-element-container;
+  border: 1px solid rgb(26, 99, 195);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width:70%;
+  margin-left: 15%;
+}
+
+.video-element-container iframe {
+  border-radius: 5px;
+  width: 100%; /* Ensure responsive sizing */
+  aspect-ratio: 16 / 9;
+}
+
+.note-container {
+  grid-area: note-container;
+  text-align: justify;
+  line-height: 1.6; 
+  padding: 0 10%;
+  color:white;
+}
+
+.note-container h2 {
+  text-align: center;
+}
+.note-container ul{
+  background-color: #304D6D;
+  border-radius: 8px;
+  padding:30px 20px;
+}
+.note-container li{
+  list-style-type: none;
+}
+
+.quize-container {
+  grid-area: quize-container;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between questions */
+  margin-bottom: 40px;
+}
+
+.question {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(26, 99, 195);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#submit1,
+#submit2 {
+  font-size: 1.1rem;
+  /* margin: 15px auto; Center-align buttons */
+  margin: 20px 0;
+  width: 20%; /* Improved button size */
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(32, 21, 255);
+  color: white;
+  cursor: pointer;
+}
+
+
+input[type="radio"] {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+
+.choice label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between radio button and text */
+}
+
+.next-previos-container {
+  grid-area: next-previos-container;
+  border-top: 1px rgb(119, 105, 105) solid;
+  display: flex;
+  padding:20px;
+  flex-direction: row nowrap;
+  justify-content: flex-start;
+  gap:20px;
+  text-align: center;
+}
+.next-previos-container a {
+    display: flex; /* Ensures the anchors behave like buttons */
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(32, 21, 255);
+    width: 150px;
+    height: 50px;
+    gap:5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold; /* Makes the text more readable */
+    transition: background-color 0.3s, color 0.3s; /* Adds smooth hover effect */
+  }
+  
+  .next-previos-container .Next {
+    background-color: rgb(32, 21, 255);
+    color: white; /* Ensures text is visible on the blue background */
+  }
+  
+  .next-previos-container a:hover {
+    background-color: rgb(101, 108, 108);
+    color: white; /* Improves visibility on hover */
+    border: none;
+  }
+  .Nexttoquiz{
+    background-color: rgb(32, 21, 255);
+    width:190px !important;
+    display:flex;
+    justify-content: space-between;
+    color:white !important;
+    gap:5px;
+  }

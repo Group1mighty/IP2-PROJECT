@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+        /* temporary Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #E1ECF9; 
+            font-family:  'Poppins', sans-serif;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 500px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0A88FF;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .btn {
+            display: block;
+            width: 91% !important;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-align:center;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .toggle-link:hover {/*hello*/
+            color: #0056b3;
+        }
+        .alert {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: top 0.5s ease-in-out;
+        }
+        
+        .success {
+            background-color: green;
+            color: white;
+        }
+        
+        .error {
+            background-color: red;
+            color: white;
+        }
+        
+        .show {
+            top: 20px; /* Slide down effect */
+        }

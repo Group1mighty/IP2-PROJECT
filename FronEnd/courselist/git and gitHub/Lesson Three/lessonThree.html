@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3: Branching and Merging</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css" />
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 3: Branching and Merging in Git</h1>
+      </header>
+      <section class="video-element-container">
+        <p>the video is being loaded</p>
+      </section>
+      <article class="note-container">
+        <h2>Lesson 3: Branching and Merging</h2>
+        <ul>
+          <li>
+            <p>
+              <b>What is Branching?</b><br />
+              Branching in Git allows you to create a separate line of development in your project. Think of it as a way to experiment with changes without affecting the main codebase.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Key Commands for Branching:</b><br />
+              <ol>
+                <li><code>git branch &lt;branch-name&gt;</code>: Create a new branch.</li>
+                <li><code>git checkout &lt;branch-name&gt;</code>: Switch to an existing branch.</li>
+                <li><code>git checkout -b &lt;branch-name&gt;</code>: Create and switch to a new branch in one step.</li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>What is Merging?</b><br />
+              Merging allows you to integrate changes from one branch into another. It’s typically used to incorporate features or fixes into the main branch.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Key Commands for Merging:</b><br />
+              <ol>
+                <li><code>git merge &lt;branch-name&gt;</code>: Merge the specified branch into your current branch.</li>
+                <li><code>git log --graph</code>: View a visual representation of branches and merges.</li>
+              </ol>
+            </p>
+          </li>
+          </ul>
+          <ul>
+            <p>
+              <b>Practical Exercise:</b><br />
+              <h3>1. Create and Switch to a Branch</h3>
+              <ol>
+                <li>Create a branch named <code>feature-branch</code>:  
+                  <ul><li><code>git branch feature-branch</code></li></ul>
+                </li>
+                <li>Switch to the new branch:  
+                  <ul><li><code>git checkout feature-branch</code></li></ul>
+                </li>
+              </ol>
+              <h3>2. Make Changes and Commit</h3>
+              <ol>
+                <li>Edit or create files in your project.</li>
+                <li>Stage and commit the changes:
+                  <ul>
+                    <li><code>git add .</code></li>
+                    <li><code>git commit -m "Added new feature"</code></li>
+                  </ul>
+                </li>
+              </ol>
+              <h3>3. Merge Changes into Main Branch</h3>
+              <ol>
+                <li>Switch back to the main branch:
+                  <ul><li><code>git checkout main</code></li></ul>
+                </li>
+                <li>Merge the changes from <code>feature-branch</code>:
+                  <ul><li><code>git merge feature-branch</code></li></ul>
+                </li>
+              </ol>
+            </p>
+          </ul>
+        </ul>
+      </article>
+      <section class="quize-container">
+        
+      </section>
+      <nav class="next-previos-container">
+        <a href="../Lesson Two/lessonTwo.html" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Previous</span>
+        </a>
+        <a href="" class="Next">
+          <span>Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonThree.js"></script>
+  </body>
+</html>

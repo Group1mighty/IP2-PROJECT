@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .certificate {
+    width: 800px;
+    padding: 40px;
+    border: 10px solid #0056b3;
+    background:linear-gradient(45deg,rgba(0,123,255,45%),white);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .certificate h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  .certificate h2 {
+    font-size: 1.8em;
+    margin: 20px 0;
+  }
+  .certificate p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+  }
+  .signatures {
+    display: flex;
+    justify-content: right;
+    margin-top: 40px;
+  }
+  .signature {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+  }
+  .title{
+    font-family: 'Poppins', sans-serif;
+    font-size:15px !important;
+  }
+  .signature-line {
+    border-top: 2px solid #333;
+    width: 200px;
+    margin: 0 auto 10px;
+  }
+@media (max-width: 768px) {
+  .certificate {
+      width: 90%;
+      padding: 20px;
+      border-width: 8px; 
+  }
+
+  .certificate h1 {
+      font-size: 2em; 
+  }
+
+  .certificate h2 {
+      font-size: 1.5em; 
+  }
+
+  .certificate p {
+      font-size: 1em; 
+  }
+
+  .signatures {
+    justify-content: right;
+    margin-top: 40px;
+  }
+
+  .signature-line {
+      width: 150px; 
+  }
+
+  .signature {
+      font-size: 20px; 
+  }
+
+  .title {
+      font-size: 12px !important; 
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate {
+      padding: 15px;
+      border-width: 6px; 
+  }
+
+  .certificate h1 {
+      font-size: 1.5em;
+  }
+
+  .certificate h2 {
+      font-size: 1em;
+  }
+
+  .certificate p {
+      font-size: 0.7em;
+  }
+
+  .signature {
+      font-size: 18px;
+  }
+
+  .signature-line {
+      width: 120px; 
+  }
+
+  .title {
+      font-size: 10px !important;
+  }
+}

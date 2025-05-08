@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 2: Core Git Commands and Workflow</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css">
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 2: Setting Up Git and Your First Repository</h1>
+      </header>
+      <section class="video-element-container">
+        <p>the video is being loaded</p>
+      </section>
+      <article class="note-container">
+        <h2>Lesson 2: Core Git Commands and Workflow</h2>
+        <ul>
+          <li>
+            <p>
+              <b>Understanding the Git Workflow:</b><br>
+              Git organizes changes to your files in three stages:
+              <ul>
+                <li><b>Working Directory:</b> This is the folder where you edit and create files. Changes made here are not yet tracked by Git.</li>
+                <li><b>Staging Area:</b> When you decide which files or changes to track, you move them to the staging area. Think of this as "preparing" changes for saving.</li>
+                <li><b>Repository:</b> This is the place where your changes are saved permanently. Once saved, you can always return to a previous version if needed.</li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Core Git Commands:</b><br>
+              Here are the main Git commands to work with the workflow:
+              <ol>
+                <li><code>git init</code>: Initializes (sets up) a new Git repository in the current folder.  
+                  <ul>
+                    <li><b>Example:</b></li>
+                    <li><code>git init</code></li>
+                    <li>After running this command, Git starts tracking changes in your project folder.</li>
+                  </ul>
+                </li>
+                <li><code>git status</code>: Shows the current state of your files.  
+                  <ul>
+                    <li>Are there changes that are not yet staged?</li>
+                    <li>Are there staged changes waiting to be committed?</li>
+                    <li><b>Example:</b></li>
+                    <li><code>git status</code></li>
+                  </ul>
+                </li>
+                <li><code>git add &lt;file&gt;</code>: Moves a file or changes to the staging area. Use this to prepare specific files for a commit.  
+                  <ul>
+                    <li><b>Example:</b></li>
+                    <li><code>git add file.txt</code></li>
+                    <li>This command stages <code>file.txt</code> for committing.</li>
+                  </ul>
+                </li>
+                <li><code>git commit -m "message"</code>: Saves changes from the staging area to the repository. Always include a meaningful message in quotes to describe the changes.  
+                  <ul>
+                    <li><b>Example:</b></li>
+                    <li><code>git commit -m "Initial commit"</code></li>
+                  </ul>
+                </li>
+                <li><code>git log</code>: Displays a history of commits in your repository. It shows details like the commit message, date, and author.  
+                  <ul>
+                    <li><b>Example:</b></li>
+                    <li><code>git log</code></li>
+                  </ul>
+                </li>
+              </ol>
+            </p>
+          </li>
+          </ul>
+          <ul>
+            <p>
+              <b>Practical Exercise:</b><br>
+              Let’s put these commands into action step by step:
+              <h3>1. Create a Folder and Initialize a Git Repository</h3>
+              <ol>
+                <li>Create a new folder for your project:
+                  <ul>
+                    <li><code>mkdir my-git-project</code></li>
+                    <li><code>cd my-git-project</code></li>
+                  </ul>
+                </li>
+                <li>Initialize Git in this folder:
+                  <ul>
+                    <li><code>git init</code></li>
+                  </ul>
+                </li>
+                <li>Now, your folder is ready to track changes with Git.</li>
+              </ol>
+              
+              <h3>2. Add and Commit a File</h3>
+              <ol>
+                <li>Create a file named <code>file.txt</code> with some content:
+                  <ul>
+                    <li><code>echo "Hello, Git!" &gt; file.txt</code></li>
+                  </ul>
+                </li>
+                <li>Check the status of your repository:
+                  <ul>
+                    <li><code>git status</code></li>
+                    <li>You’ll see <code>file.txt</code> as an untracked file.</li>
+                  </ul>
+                </li>
+                <li>Add the file to the staging area:
+                  <ul>
+                    <li><code>git add file.txt</code></li>
+                  </ul>
+                </li>
+                <li>Commit the file to the repository with a message:
+                  <ul>
+                    <li><code>git commit -m "Initial commit"</code></li>
+                    <li>This saves the current version of <code>file.txt</code> to the repository.</li>
+                  </ul>
+                </li>
+              </ol>
+              
+              <h3>3. Check Your Commit History</h3>
+              <ol>
+                <li>View the history of commits:
+                  <ul>
+                    <li><code>git log</code></li>
+                    <li>This will show the commit ID, author, date, and the commit message ("Initial commit").</li>
+                  </ul>
+                </li>
+              </ol>
+            </p>
+          </ul>
+          <ul>
+            <p>
+              <b>Summary:</b><br>
+              <ul>
+                <li><b>Git Workflow:</b>  
+                  Working Directory → Staging Area → Repository  
+                </li>
+                <li><b>Commands to Remember:</b>
+                  <ul>
+                    <li><code>git init</code>: Set up a Git repository.</li>
+                    <li><code>git status</code>: Check the current state of the repository.</li>
+                    <li><code>git add &lt;file&gt;</code>: Stage changes.</li>
+                    <li><code>git commit -m "message"</code>: Save changes permanently.</li>
+                    <li><code>git log</code>: View your commit history.</li>
+                  </ul>
+                </li>
+                <li><b>Practical Skills:</b>
+                  <ul>
+                    <li>Create and initialize a repository.</li>
+                    <li>Add, commit, and track changes.</li>
+                    <li>Review your commit history.</li>
+                  </ul>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+      </article>
+      
+      
+      <section class="quize-container">
+        
+      </section>
+      <nav class="next-previos-container">
+        <a href="" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span> Previous</span>
+        </a>
+        
+        <a href="" class="Next">
+          <span> Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        
+      </nav>
+    </main>
+    <script src="lessonTwo.js"></script>
+  </body>
+</html>

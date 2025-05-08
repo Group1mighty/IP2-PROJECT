@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 5: Responsive Design Basics</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css">
+    <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
+  </head>
+  <body>
+    <header>
+      <a href="homeP.html" target="_blank"><img src="../../../pictures/icon/result.png" class="Clogo"></a>
+      <nav>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Courses</a></li>
+          </ul>
+      </nav>
+  </header>
+    <main class="large-container">
+      <header class="title-container">
+        <h1>Lesson 5: Responsive Design Basics</h1>
+      </header>
+      <section class="video-element-container">
+        
+      </section>
+      <article class="note-container">
+        <h2>What is Responsive Design?</h2>
+        <ul>
+          <li>
+            <p>
+              <b>Responsive web design</b> is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. The core of responsive design is the ability to adjust the layout and content dynamically to suit the device viewing the site, ensuring optimal user experience across smartphones, tablets, and desktops.
+            </p>
+          </li>
+        </ul>
+        
+        <h2>Flexible Layouts</h2>
+        <ul>
+          <li>
+            <p><b>Flexible Layouts:</b> This method uses relative units, such as percentages, rather than fixed units like pixels. This enables elements to resize according to the screen’s width.</p>
+            <p>For example, setting a container to 80% of the screen width allows the content to adjust accordingly on various screen sizes.</p>
+            <pre>
+  .container {
+    width: 80%;
+  }
+            </pre>
+          </li>
+        </ul>
+
+        <h2>Media Queries</h2>
+        <ul>
+          <li>
+            <p><b>Media Queries:</b> Media queries enable the application of specific styles based on the device's characteristics, such as width, height, or orientation. They allow for different CSS rules to be applied to different screen sizes.</p>
+            <pre>
+  @media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+  }
+            </pre>
+            <p>In this example, the container's width is set to 100% for devices with a screen width of 600px or smaller, ensuring a full-width layout on mobile devices.</p>
+          </li>
+        </ul>
+
+        <h2>Mobile-First Design</h2>
+        <ul>
+          <li>
+            <p><b>Mobile-First Approach:</b> A mobile-first strategy means designing for the smallest screen sizes first and then adding more complex layouts for larger screens. This method prioritizes performance and usability for mobile users, who represent the largest audience for web browsing today.</p>
+            <p>By starting with the smallest screens and gradually enhancing the design for larger screens using media queries, developers ensure a seamless experience across all devices.</p>
+          </li>
+        </ul>
+        
+        <h2>Practical Exercise</h2>
+        <ul>
+          <li>
+            <p>
+              <b>Step 1:</b> Create a flexible layout for a basic webpage. Start by setting the container's width to 80% using percentage-based values.
+              <pre>
+  .container {
+    width: 80%;
+  }
+              </pre>
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Step 2:</b> Implement media queries to change the layout when the screen width is below 600px.
+              <pre>
+  @media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+  }
+              </pre>
+            </p>
+          </li>
+        </ul>
+
+        <p style="color:black">
+          Responsive design is key to delivering great user experiences across all devices. By mastering flexible layouts, media queries, and mobile-first principles, you can create websites that are both functional and visually appealing on any screen. 😊
+        </p>
+      </article>
+      
+      <section class="quize-container">
+        <!-- Question 1 -->
+        <article class="question">
+          <div class="choice">
+            <h2>Question 1</h2>
+            <p>What is the purpose of media queries in responsive design?</p>
+            <label>
+              <input type="radio" name="q1" value="Apply styles based on screen size" class="inputq1" />
+              <span>Apply styles based on screen size</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="Fix the layout of the page"
+                class="inputq1"
+              />
+              <span>Fix the layout of the page</span>
+            </label>
+            <label>
+              <input type="radio" name="q1" value="Make the page look the same on all devices" class="inputq1" />
+              <span>Make the page look the same on all devices</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="Remove unnecessary styles"
+                class="inputq1"
+              />
+              <span>Remove unnecessary styles</span>
+            </label>
+            <button id="submit" class="q1">Submit</button>
+          </div>
+        </article>
+  
+        <!-- Question 2 -->
+        <article class="question">
+          <div class="choice">
+            <h2>Question 2</h2>
+            <p>Which of the following is the primary benefit of mobile-first design?</p>
+            <label>
+              <input type="radio" name="q2" value="It ensures a better experience on mobile devices" />
+              <span>It ensures a better experience on mobile devices</span>
+            </label>
+            <label>
+              <input type="radio" name="q2" value="It allows for complex layouts on large screens only" />
+              <span>It allows for complex layouts on large screens only</span>
+            </label>
+            <label>
+              <input type="radio" name="q2" value="It simplifies the design process by avoiding large screens" />
+              <span>It simplifies the design process by avoiding large screens</span>
+            </label>
+            <label>
+              <input type="radio" name="q2" value="It removes the need for media queries" />
+              <span>It removes the need for media queries</span>
+            </label>
+            <button id="submit-q2">Submit</button>
+          </div>
+        </article>
+      </section>
+      <nav class="next-previos-container">
+        <a href="" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span> Previous</span>
+        </a>
+        <a href="../Test/cssTest.html" class="Nexttoquiz" target="_blank">
+          <span> Proceed to the test</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonFive.js"></script>
+  </body>
+</html>

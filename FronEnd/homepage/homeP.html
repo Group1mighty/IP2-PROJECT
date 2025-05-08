@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>eduSphere - Your Gateway to Knowledge</title>
+    <link rel="icon" href="../pictures/icon/tablogo.png" type="image/png">
+    <link rel="stylesheet" href="homeP.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <a href="homeP.html" target="_self"><img src="../pictures/icon/result.png" class="Clogo"></a>
+        <nav>
+            <ul type="">
+                <li><a href="homeP.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" id="courses-link">Courses</a>
+                    <ul class="dropdown-menu" id="courses-dropdown">
+                        <li><a href="../courselist/courselist.html?from=home">Git and GitHub</a></li>
+                        <li><a href="../courselist/courselist.html?from=home">HTML</a></li>
+                        <li><a href="../courselist/courselist.html?from=home">CSS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+                <li><button><a href="./signup/signup.html?from=hero" target="_parent">Get Started</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section id="banner">
+        <div class="banner-content">
+            <h1 class="welcome"></h1>
+            <script>
+                    const welcomeMessage = "Learn, Grow, Succeed—With eduSphere";
+                    let charIndex = 0;
+                    const messageElement = document.querySelector('.welcome');
+                    function typeEffect() {
+                        if (charIndex < welcomeMessage.length) {
+                            messageElement.textContent += welcomeMessage.charAt(charIndex);
+                            charIndex++;
+                            setTimeout(typeEffect, 100);/*the setTimeout function calls the typeEffect function after a delay of 100 milliseconds until the charIndex is less than the length of the welcomeMessage. If the condition is false, the function stops there and doesn't execute the setTimeout(typeEffect, 100); that how we stop the function calling it self*/
+                        }
+                    }
+                    typeEffect();
+            </script>
+            <p class="content_p">Welcome to eduSphere, your trusted 
+                gateway to knowledge and skills. Here, 
+                education meets flexibility. Our platform 
+                empowers students, professionals, and 
+                lifelong learners alike with expertly crafted 
+                courses, accessible anytime, anywhere.</p>
+            <button class="cta-button"><a href="./signup/signup.html?from=hero" target="_parent">Start Learning Now</a></button>
+        </div>
+        <img src="../pictures/herosection.png" class="bannerPic">
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <h2>How It Works?</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="../pictures/icon/result (4).png" class="stepPic">
+                <h3>Step 1</h3>
+                <p>Create yourown personalized account on eduSphere platform.</p>
+            </div>
+            <div class="step">
+                <img src="../pictures/icon/result (5).png" class="stepPic">
+                <h3>Step 2</h3>
+                <p>Explore courses with engaging lessons, videos, and exercises.</p>
+            </div>
+            <div class="step">
+                <img src="../pictures/icon/result (7).png" class="stepPic">
+                <h3>Step 3</h3>
+                <p>Receive a certificate showcasing your achievement.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
+    <section id="testimonials">
+        <h2>What the Students Say About Us?</h2>
+        <div class="testimonials-container">
+            <p>Loading Comments....</p>
+        </div>
+    </section>
+    <!-- eduSphere Advantage Section -->
+    <section id="advantage">
+        <h2>The eduSphere Advantage</h2>
+        <div class="advantage-item a">
+            <div class="discription">
+                <img src="../pictures/icon/59927926-8a43-474d-b054-faacd3181b9c.jpg" class="adv_logo">
+                <h3>Expert Instructors</h3>
+                <p>Learn from the Best. Our instructors are industry 
+                    professionals who bring real world insights to every 
+                    course, helping you gain practical skills and 
+                    knowledge.</p>
+            </div>
+            <div class="pic">
+                <img src="../pictures/4bbc32277978d847a2e12f7e9a602361.jpg" class="advPerson advPerson1">
+                <img src="../pictures/0e7595ecf9466875ed3b6c6a94d67115.jpg" class="advPerson advPerson2">
+            </div>
+        </div>
+        <div class="advantage-item b">
+            <div class="pic">
+                <img src="../pictures/2ccc9f6a7d15d93eed105edf9a7557db.jpg" class="advPerson advPerson2">
+                <img src="../pictures/3a6606d9f9a967a69252d7a473ec11e6.jpg" class="advPerson advPerson1">
+            </div>
+            <div class="discription">
+                <img src="../pictures/icon/calendar schedule icon, planning linear sign isolated on white background - editable vector illustration eps10.jpg" class="adv_logo">
+                <h3>Flexible Learning Schedule</h3>
+                <p>Access courses at your own pace, anytime, anywhere.</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="discription">
+                <img src="../pictures/icon/Interactive free icons designed by SBTS2018.jpg" class="adv_logo">
+                <h3>Interactive Content</h3>
+                <p>Engaging lessons, quizzes, and exercises for a dynamic learning experience.</p>
+            </div>
+            <div class="pic">
+                <img src="../pictures/226d7df4125d4d0428633e508bf86cc1.jpg" class="advPerson advPerson1">
+                <img src="../pictures/b2eb15f22b86c4d6cdefe7b84fc1ede4.jpg" class="advPerson advPerson2">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section id="cta">
+            <div class="cta-content">
+                <img src="../pictures/icon/result (8).png">
+                <div class="cta-text">
+                    <h2>Imagine Your Future!</h2>
+                    <p>What do you want to learn today? What's your dream job? Discover the program that's right for you!</p>
+                </div>
+                <button class="cta-button2"><a href="./signup/signup.html?from=hero" target="_parent">Get Started</a></button>
+            </div>
+    </section>
+    <!--courses section-->
+    <section id="courses-section">
+        <h2>Some of the Courses We Offer</h2>
+        <div class="courses-grid">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <img src="../pictures/github.jpg" alt="Web Development" class="course-icon">
+                <h3>Git And GitHub</h3>
+                <p>Learn to control and manage Git and GitHub to control of you.</p>
+                <a class="learn-more" href="../courselist/courselist.html?from=home" target="_blank">Learn More</a>
+            </div>
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <img src="../pictures/HTML.jpg" alt="Data Science" class="course-icon">
+                <h3>HTML</h3>
+                <p>create your own website and the basics of the Web with HTML.</p>
+                <a class="learn-more" href="../courselist/courselist.html?from=home" target="_blank">Learn More</a>
+            </div>
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <img src="../pictures/css.svg" alt="Digital Marketing" class="course-icon">
+                <h3>CSS</h3>
+                <p>Learn the fundamentals of CSS to create visually stunning and responsive websites.</p>
+                <a class="learn-more" href="../courselist/courselist.html?from=home" target="_blank">Learn More</a>
+            </div>
+        </div>
+        <a href="../courselist/courselist.html?from=home" target="_blank" class="view-all-courses">View All Courses</a>
+    </section>
+    <!--about section-->
+    <section id="about">
+        <h3>About eduSphere</h3>
+        <div class="aboutContent">
+            <p class="aboutText">Welcome to eduSphere, your go-to platform for an engaging and personalized learning experience. Our mission is to make education accessible and enjoyable for everyone, offering a wide range of online courses designed to help you grow, learn, and achieve your goals. With expert instructors, interactive content, and a supportive community, eduSphere empowers you to take charge of your learning journey anytime, anywhere. Join us today and unlock your full potential!</p>
+            <img src="../pictures/image.jpg">
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer id="footer">
+        <img src="../pictures/icon/result.png" class="Clogo">
+        <div class="socials">
+            <a href="#" target="_blank"><img src="../pictures/icon/fb.png"></a>
+            <a href="#" target="_blank"></a><img src="../pictures/icon/insta.png"></a>
+            <a href="#" target="_blank"></a><img src="../pictures/icon/tt.png"></a>
+            <a href="#" target="_blank"></a><img src="../pictures/icon/ytube.png"></a>
+        </div>
+        <p>&copy; 2024 Created By Group 1 All Rights Reserved. </p>
+        <p><img src="../pictures/icon/location.png">AASTU, BLOCK 16.</p>
+        <p><a href="mailto:group1@gmail.com" class="mail"><img src="../pictures/icon/mail.png" class="mailpic">group1@gmail.com</a></p>
+    </footer>
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+</body>
+<script src="homep.js"></script>
+</html>
