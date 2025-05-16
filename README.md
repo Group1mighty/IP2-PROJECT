@@ -32,7 +32,7 @@ eduSphere - Group Project
                          ├── courselists
                          |   ├──CSS
                          |   |     ├──lessonOne
-                         |   |    ├──lessontwo
+                         |   |     ├──lessontwo
                          |   |     ├──lessonThree
                          |   |     ├──lessonfour
                          |   |     ├──lessonFive 
@@ -72,8 +72,6 @@ eduSphere - Group Project
                   Note: all the lessons have their own .html. 
   
   Future Improvements
-
-  . Add user authentication and profiles.
   . Introduce real-time chat and discussion forums.
   . Enhance accessibility for visually impaired users.
   
