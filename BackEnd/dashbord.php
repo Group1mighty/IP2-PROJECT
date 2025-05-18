@@ -1,6 +1,59 @@
-  <?php require 'db.php'; 
-  session_start();
-  ?>
+<?php 
+require 'db.php'; 
+session_start();
+
+if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
+  $token = $_COOKIE['remember_token'];
+  $stmt = $conn->prepare("SELECT user_id FROM remember_tokens WHERE token = ? AND expires_at > NOW()");
+  $stmt->bind_param("s", $token);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  
+  if ($result && $result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      // Fetch full user data
+      $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
+      $stmt->bind_param("i", $row['user_id']);
+      $stmt->execute();
+      $userResult = $stmt->get_result();
+      $user = $userResult->fetch_assoc();
+
+      // Set session
+      $_SESSION['user_id'] = $user['user_id'];
+      $_SESSION['username'] = $user['user_name'];
+      $_SESSION['profile_picture']=$user['profile_pic'];
+      $_SESSION['email']=$user['email'];
+  }
+}
+
+// First Query: user_course_completion
+$stmt = $conn->prepare("SELECT COUNT(*) AS count  FROM user_course_completion WHERE user_id = ?");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$_SESSION['courses_completed'] = $row['count'];
+$stmt->close(); // close before reusing
+
+// Second Query: user_lesson_views
+$stmt = $conn->prepare("SELECT COUNT(*) AS count FROM user_lesson_views WHERE user_id = ?");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$_SESSION['lesson_viewed'] = $row['count'];
+$stmt->close();
+
+// Third Query: user_question_attempts
+$stmt = $conn->prepare("SELECT COUNT(*) AS count FROM user_question_attempts WHERE user_id = ?");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$_SESSION['questions_completed'] = $row['count'];
+$stmt->close();
+?>
+
   <?php
   if (!isset($_SESSION['user_id'])) {
       header("Location: ../FronEnd/homepage/homeP.html");
@@ -24,7 +77,7 @@
           @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
         /* VARIABLES & RESET */
         :root {
-          --primary-color: #0A88FF;;
+          --primary-color: #0A88FF;
           --secondary-color: #f0f4f8;
           --text-color: #333;
           --bg-color: #fafbfc;
@@ -36,6 +89,14 @@
           margin: 0;
           padding: 0;
           box-sizing: border-box;
+        }
+        button{
+          font-family: 'Poppins', sans-serif !important;
+          font-size:1rem;
+        }
+        button:hover{
+          background-color:rgb(6, 78, 146) !important;
+          color: #fff !important;
         }
 
         body {
@@ -218,8 +279,8 @@
         .progress-fill {
           height: 100%;
           background: var(--primary-color);
-          width: 50%;
-          transition: width 5s ease;
+          width: 0%;
+          transition: width 2s ease-in-out;
         }
 
         /* small bars inside per-course list */
@@ -403,6 +464,49 @@
             color:white;
             text-decoration: underline;
         }
+        .alert {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: top 0.5s ease-in-out;
+        }
+        .show {
+            top: 20px; /* Slide down effect */
+            background-color: green;
+            color: white;
+        }
+        #feedback {
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+            width:60%;
+            margin:0 auto;
+          }
+
+        #feedback h2 {
+            margin-bottom: 1rem;
+          }
+
+        #feedback textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+          }
+
+        #feedback button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
         /* RESPONSIVE */
         @media (max-width: 768px) {
           .top-panels {
@@ -428,6 +532,7 @@
     <body>
       <!-- HEADER -->
       <header class="header">
+      <div style="display: none;" class="alert"></div>
         <div class="logo">eduSphere</div>
         <a class="page-title" href="dashbord.php">Dashboard</a>
         <div class="user-menu">
@@ -468,9 +573,9 @@
           <div class="panel stats-panel">
             <h2>STAT</h2>
             <ul class="stats-list">
-              <li>Courses Completed: <span id="program-completed">0</span></li>
-              <li>Questions Completed: <span id="quizzes-completed">0</span></li>
-              <li>Lessons Viewed: <span id="lessons-viewed">0</span></li>
+              <li>Courses Completed: <span id="program-completed"><?php echo $_SESSION['courses_completed']?></span></li>
+              <li>Questions Completed: <span id="quizzes-completed"><?php echo $_SESSION['questions_completed'] ?></span></li>
+              <li>Lessons Viewed: <span id="lessons-viewed"><?php echo $_SESSION['lesson_viewed']?></span></li>
             </ul>
           </div>
 
@@ -483,6 +588,7 @@
             $_enrolledCourse=[];
             $stmt = $conn->prepare("SELECT course_id FROM enrollment WHERE user_id = ?");
             $stmt->bind_param("i", $_SESSION['user_id']);
+            echo '<script>console.log("'.$_SESSION['user_id'].'");</script>';
             $stmt->execute();
             $result = $stmt->get_result();
             if($result->num_rows>0)
@@ -497,18 +603,54 @@
                     $stmt2->execute();
                     $result2 = $stmt2->get_result();
 
+                    $stmt3 = $conn->prepare("SELECT COUNT(*) AS count  FROM user_course_completion WHERE course_id = ? AND user_id = ?");
+                    $stmt3->bind_param("ii", $course_id, $_SESSION['user_id']);
+                    $stmt3->execute();
+                    $result3 = $stmt3->get_result();
+                    $row3=$result3->fetch_assoc(); 
+                    if ($row3['count'] > 0)
+                    {
+                      $percent=100;
+                    }
+                    else{
+                      $stmt4 = $conn->prepare("SELECT COUNT(*) AS count  FROM user_lesson_views WHERE course_id = ? AND user_id = ?");
+                      $stmt4->bind_param("ii", $course_id, $_SESSION['user_id']);
+                      $stmt4->execute();
+                      $result4 = $stmt4->get_result();
+                      $row4=$result4->fetch_assoc(); 
+                      $percentInt=14.2857142857*$row4['count'];
+                      $percentInt = floor($percentInt); // round down to the nearest integer
+                      $percent = $percentInt;
+                    }
+                    $result3->close();
+                    ///////////////////////////////////////////////////////////////////////////////////////////////
                     // Fetch the title from the second query
                     if ($row2 = $result2->fetch_assoc()) {
                       $location='';
                       switch($row2['title'])
                       {
                         case "GIT AND GIT HUB":
+                          if($percent==100)
+                          {
+                            $location='../FronEnd/courselist/git and gitHub/git and gitHubLessonList.html?completed=true';
+                          }
+                          else 
                             $location='../FronEnd/courselist/git and gitHub/git and gitHubLessonList.html';
                           break;
                         case "HTML":
+                          if($percent==100)
+                          {
+                            $location='../FronEnd/courselist/html/htmllLessonlist.html?completed=true';
+                          }
+                          else
                             $location='../FronEnd/courselist/html/htmllLessonlist.html';
                           break;
                         case "CSS":
+                          if($percent==100)
+                          {
+                            $location='../FronEnd/courselist/css/cssLessonList.html?completed=true';
+                          }
+                          else
                             $location='../FronEnd/courselist/css/cssLessonList.html';
                           break;
                       }
@@ -519,7 +661,7 @@
                                     <div class="progress-bar small">
                                       <div class="progress-fill"></div>
                                     </div>
-                                    <span class="course-percent">0%</span>
+                                    <span class="course-percent">'.$percent.'%</span>
                                   </div>
                                   <a href="'.$location.'" class="continue">Continue</a>
                                 </div>
@@ -553,7 +695,7 @@
                       <div class="course-thumbnail"><img src="../FronEnd/'.preg_replace('/^\.\.\//', '', $user['picture']).'" alt="'.$user['title'].' picture"></div>
                       <p class="course-description line-clamp" id="'.$id.'">' . $user['discription'] . '</p>
                       <a href="javascript:void(0);" onclick="toggleDescription(\'' . $id . '\', this)" class="link-showmore">Show More</a>
-                      <button class="btn-enroll" disabled>Enroll</button>
+                      <button class="btn-enroll" onclick="enroll(\'' . addslashes($user['title']) . '\')")>Enroll</button>
                   </div>';              
                   }
               }
@@ -621,7 +763,15 @@
           ?>
           </div>
         </section>
+        <!-- Comment Section -->
       </main>
+      <section id="feedback">
+          <h2>We’d love your feedback!</h2>
+          <form action="./addcomments.php" method="POST">
+            <textarea name="comment" rows="4" required placeholder="Tell us what you think..."></textarea>
+            <button type="submit">Submit Feedback</button>
+          </form>
+        </section>
 
       <!-- FOOTER -->
       <footer id="footer">
@@ -638,6 +788,26 @@
       </footer>
     </body>
     <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('register')) {
+          document.getElementsByClassName('alert')[0].style.display = "block";
+          document.getElementsByClassName('alert')[0].textContent="You have been registered successfully!!";
+          document.getElementsByClassName('alert')[0].classList.add('s');
+      }
+      if(params.has('alertMessage') && params.has('alertType')) {
+          document.getElementsByClassName('alert')[0].style.display = "block";
+          document.getElementsByClassName('alert')[0].textContent=params.get('alertMessage');
+          document.getElementsByClassName('alert')[0].classList.add(params.get('alertType'));
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        let alertBox = document.querySelector(".alert");
+        if (alertBox.style.display==="block") {
+            alertBox.classList.add("show");
+            setTimeout(() => {
+                alertBox.classList.remove("show");
+            }, 3000); // Hide after 3 seconds
+        }
+      });
       function toggleDescription(id, btn) {
     const desc = document.getElementById(id);
     desc.classList.toggle('expanded');
@@ -646,5 +816,19 @@
   function enroll(title) {
   window.location.href = "enroll.php?course_title=" + encodeURIComponent(title);
 }
+window.addEventListener('DOMContentLoaded', () => {
+  const courseProg = document.getElementsByClassName('course-prog');
+  for (let i = 0; i < courseProg.length; i++) {
+    const percentText = courseProg[i].querySelector('.course-percent').textContent;
+    const percent = parseInt(percentText); // Remove the % sign
+    const fill = courseProg[i].querySelector('.progress-fill');
+    
+    // Add small delay to allow transition to trigger
+    setTimeout(() => {
+      fill.style.width = percent + '%';
+    }, 100); // 100ms is usually enough
+  }
+});
+
     </script>
   </html>
