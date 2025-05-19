@@ -1,6 +1,10 @@
 let params = new URLSearchParams(window.location.search);
 let id = parseInt(params.get("id")); 
 let next=document.querySelector(".Next");
+let completed=params.get("completed");
+document.getElementById("lesson").addEventListener("click",function(){
+    window.location.href="../htmllLessonlist.html?completed="+completed;
+});
 next.addEventListener("click",function(event){
     event.preventDefault();
     window.location.href="../Lesson Four/lessonfour.html?id="+(id+1);

@@ -1,5 +1,9 @@
 let params = new URLSearchParams(window.location.search);
 let id = parseInt(params.get("id")); 
+let completed=params.get("completed");
+document.getElementById("lesson").addEventListener("click",function(){
+    window.location.href="../cssLessonList.html?completed="+completed;
+});
 let previous=document.querySelector(".Previous");
 previous.addEventListener("click",function(event){
     event.preventDefault();

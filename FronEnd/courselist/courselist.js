@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Append the message to the course content
                 courseContent.appendChild(newdi);
                 count++;
-                if(button.classList.contains("gitandgithub"))
+                if(button.classList.contains("GIT"))
                 {
                     signup.href="../homepage/signup/signup.html?from=course1";
                 }
-                else if(button.classList.contains("html"))
+                else if(button.classList.contains("HTML"))
                 {
                     signup.href="../homepage/signup/signup.html?from=course2";
                 }

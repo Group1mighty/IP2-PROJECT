@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 3: Adding Text and Formatting</title>
-  <!-- Font Awesome CDN -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../Lesson One/lessonOne.css" />
-  <link rel="icon" href="../../../pictures/icon/tablogo.png" type="image/png">
-</head>
-<body>
-  <main class="large-container">
-    <header class="title-container">
-      <h1>Lesson 3: Adding Text and Formatting</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3: Adding Text and Formatting</title>
+    <!-- Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Lesson One/lessonOne.css" />
+    <link
+      rel="icon"
+      href="../../../pictures/icon/tablogo.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="homeP.html" target="_blank"
+        ><img src="../../../pictures/icon/result.png" class="Clogo"
+      /></a>
+      <p class="lesson" id="lesson">Lessons</p>
+      <nav>
+        <ul>
+          <li><a href="../../../../BackEnd/dashbord.php">Dashbored</a></li>
+        </ul>
+      </nav>
     </header>
-    <section class="video-element-container">
-    </section>
-    <article class="note-container">
-      <h2>Lesson Overview</h2>
-      <ul>
-        <li>
-          <b>Adding Headings:</b>
-          <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (largest) to <code>&lt;h6&gt;</code> (smallest). Use these to structure your content.</p>
-          <pre><code>&lt;h1&gt;This is a main heading&lt;/h1&gt;</code></pre>
-        </li>
-        <li>
-          <b>Paragraphs:</b>
-          <p>To add paragraphs, use the <code>&lt;p&gt;</code> tag. Paragraphs create spacing around text to improve readability.</p>
-          <pre><code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
-        </li>
-        <li>
-          <b>Text Formatting:</b>
-          <ul>
-            <li><code>&lt;b&gt;</code>: Bold text. Example: <code>&lt;b&gt;Bold Text&lt;/b&gt;</code></li>
-            <li><code>&lt;i&gt;</code>: Italicize text. Example: <code>&lt;i&gt;Italic Text&lt;/i&gt;</code></li>
-            <li><code>&lt;u&gt;</code>: Underline text. Example: <code>&lt;u&gt;Underlined Text&lt;/u&gt;</code></li>
-          </ul>
-        </li>
-        <li>
-          <b>Lists:</b>
-          <p>HTML offers two types of lists:</p>
-          <ol>
-            <li><b>Ordered List:</b> Use <code>&lt;ol&gt;</code> with <code>&lt;li&gt;</code> for numbered items.</li>
-            <li><b>Unordered List:</b> Use <code>&lt;ul&gt;</code> with <code>&lt;li&gt;</code> for bullet points.</li>
-            <li><b>Defination list:</b> Use <code>&lt;dl&gt;</code> with <code>&lt;dt&gt;</code> for bullet points. and with <code>&lt;dd&gt;</code> for defination</li>
-          </ol>
-          <pre><code>
+    <main class="large-container">
+      <div class="title-container">
+        <h1>Lesson 3: Adding Text and Formatting</h1>
+      </div>
+      <section class="video-element-container"></section>
+      <article class="note-container">
+        <h2>Lesson Overview</h2>
+        <ul>
+          <li>
+            <b>Adding Headings:</b>
+            <p>
+              HTML provides six levels of headings, from
+              <code>&lt;h1&gt;</code> (largest) to
+              <code>&lt;h6&gt;</code> (smallest). Use these to structure your
+              content.
+            </p>
+            <pre><code>&lt;h1&gt;This is a main heading&lt;/h1&gt;</code></pre>
+          </li>
+          <li>
+            <b>Paragraphs:</b>
+            <p>
+              To add paragraphs, use the <code>&lt;p&gt;</code> tag. Paragraphs
+              create spacing around text to improve readability.
+            </p>
+            <pre><code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+          </li>
+          <li>
+            <b>Text Formatting:</b>
+            <ul>
+              <li>
+                <code>&lt;b&gt;</code>: Bold text. Example:
+                <code>&lt;b&gt;Bold Text&lt;/b&gt;</code>
+              </li>
+              <li>
+                <code>&lt;i&gt;</code>: Italicize text. Example:
+                <code>&lt;i&gt;Italic Text&lt;/i&gt;</code>
+              </li>
+              <li>
+                <code>&lt;u&gt;</code>: Underline text. Example:
+                <code>&lt;u&gt;Underlined Text&lt;/u&gt;</code>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Lists:</b>
+            <p>HTML offers two types of lists:</p>
+            <ol>
+              <li>
+                <b>Ordered List:</b> Use <code>&lt;ol&gt;</code> with
+                <code>&lt;li&gt;</code> for numbered items.
+              </li>
+              <li>
+                <b>Unordered List:</b> Use <code>&lt;ul&gt;</code> with
+                <code>&lt;li&gt;</code> for bullet points.
+              </li>
+              <li>
+                <b>Defination list:</b> Use <code>&lt;dl&gt;</code> with
+                <code>&lt;dt&gt;</code> for bullet points. and with
+                <code>&lt;dd&gt;</code> for defination
+              </li>
+            </ol>
+            <pre><code>
 &lt;ul&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
@@ -66,23 +110,22 @@
 &lt;/dl&gt;
 
           </code></pre>
-        </li>
-      </ul>
-    </article>
-    <section class="quize-container">
-      
-    </section>
-    <nav class="next-previos-container">
-      <a href="" class="Previous">
-        <i class="fa-solid fa-arrow-left"></i>
-        <span>Previous</span>
-      </a>
-      <a href="" class="Next">
-        <span>Next</span>
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </nav>
-  </main>
-  <script src="lessonThree.js"></script>
-</body>
+          </li>
+        </ul>
+      </article>
+      <section class="quize-container"></section>
+      <nav class="next-previos-container">
+        <a href="" class="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Previous</span>
+        </a>
+        <a href="" class="Next">
+          <span>Next</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </nav>
+    </main>
+    <script src="lessonThree.js"></script>
+    <script src="../../updateprogress.js"></script>
+  </body>
 </html>

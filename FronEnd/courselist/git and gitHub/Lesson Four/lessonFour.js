@@ -1,5 +1,9 @@
 let params = new URLSearchParams(window.location.search);
 let id = parseInt(params.get("id")); 
+let completed=params.get("completed");
+document.getElementById("lesson").addEventListener("click",function(){
+    window.location.href="../git and gitHubLessonList.html?completed="+completed;
+});
 let next=document.querySelector(".Next");
 next.addEventListener("click",function(event){
     event.preventDefault();

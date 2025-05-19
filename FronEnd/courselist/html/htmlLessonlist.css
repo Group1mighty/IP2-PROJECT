@@ -6,6 +6,14 @@ body {
     background-color: #E1ECF9; 
     color: #333;
 }
+.badge {
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
 header {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2em;

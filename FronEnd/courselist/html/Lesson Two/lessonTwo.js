@@ -5,6 +5,10 @@ next.addEventListener("click",function(event){
     event.preventDefault();
     window.location.href="../Lesson Three/lessonThree.html?id="+(id+1);
 });
+let completed=params.get("completed");
+document.getElementById("lesson").addEventListener("click",function(){
+    window.location.href="../htmllLessonlist.html?completed="+completed;
+});
 document.addEventListener("DOMContentLoaded", function () {
     fetch("../../../../BackEnd/lessons/get_lesson_video.php"+"?id="+id)
     .then(response => response.text())

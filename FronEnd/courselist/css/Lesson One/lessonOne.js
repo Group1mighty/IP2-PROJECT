@@ -1,5 +1,9 @@
 let params = new URLSearchParams(window.location.search);
 let id = parseInt(params.get("id"));
+let completed=params.get("completed");
+document.getElementById("lesson").addEventListener("click",function(){
+    window.location.href="../cssLessonList.html?completed="+completed;
+});
 document.addEventListener("DOMContentLoaded", function () {
     fetch("../../../../BackEnd/lessons/get_lesson_video.php"+"?id="+id)
     .then(response => response.text())
@@ -13,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".quize-container").innerHTML = data;
         let answer1 = document.querySelector(".correct_option1");
         let answer2 = document.querySelector(".correct_option2");
+        
         document.getElementById("submit1").addEventListener("click", function () {
             let selectedAnswer = document.querySelector('input[name="q1"]:checked');
             const resultDiv = document.createElement("div");
