@@ -77,7 +77,7 @@ Future Improvements
 
 Team Members
 [ABEL TEFERI (AbelTT)]
-[ABEL TSEGAY]
+[ABEL TSEGAY (abel-collab)]
 [ABDULKERIM ADEM (abdu2030)]
 [ABDULHAKIM KEDIR]
 [ABDREHIM MISBAH] (Depthabdre)
