@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Modify startTimer to accept a callback
 function startTimer(onTimeout) {
-    const timerDisplay = document.getElementById('timer'); 
+    const timerDisplay = document.getElementById('timer');
     let countdown;
     let timeRemaining = 600;
 

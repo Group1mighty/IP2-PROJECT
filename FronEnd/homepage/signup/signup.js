@@ -7,9 +7,22 @@ const authForm = document.getElementById("auth-form");
 const toggleLink = document.getElementById("toggle-link");
 const container=document.querySelector('.container');
 
+if (params.has('alertMessage') && params.has('alertType')) {
+    const alert=params.get('alertMessage');
+    const alertType=params.get('alertType');
+    document.getElementsByClassName('alert')[0].style.display = "block";
+    document.getElementsByClassName('alert')[0].textContent=alert;
+    document.getElementsByClassName('alert')[0].classList.add(alertType);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    /*if(document.getElementById('form-title').textContent === "Login" && !params.has('alertMessage') && !params.has('alertType')){
+        window.onload = function () {
+            window.location.href = "../../../BackEnd/auth/check_auth.php?from=" + course;
+        };        
+    }*/
     let alertBox = document.querySelector(".alert");
-    if (alertBox) {
+    if (alertBox.style.display==="block") {
         alertBox.classList.add("show");
         setTimeout(() => {
             alertBox.classList.remove("show");
@@ -19,74 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
 authForm.addEventListener("submit", function (e) {
     authForm.action=authForm.action+'?from='+course;
 })
-/*const enter=document.querySelector('.btn');
-enter.addEventListener('click', () => {
-    if (!authForm.checkValidity()) 
-        {
-        authForm.reportValidity();
-    }
-    if (course === "course1") {
-        enter.href="../../courselist/git and gitHub/git and gitHubLessonList.html";
-    }
-    else if(course=="course2")
-    {
-        enter.href="../../courselist/html/htmlLessonList.html";
-    }
-    else if(course=="course3")
-    {
-        enter.href="../../courselist/css/cssLessonList.html";
-    }
-    else
-    {
-        enter.href="../../courselist/courselist.html";
-    }
-});*/
-/*addEventListener("click",function (e){
 
-})"*/ 
-
-    // Listen for clicks on the container (Event Delegation)
-container.addEventListener("click", (e) => {
-    if (e.target.classList.contains("toggle-link")) {
-        const formTitle = document.getElementById("form-title");
-        
-        if (formTitle.textContent === "Sign Up") {
-            container.innerHTML = `
-                <h2 id="form-title">Login</h2>
-                <form id="auth-form" method="post" action="../../../BackEnd/auth/login.php?from=${encodeURIComponent(course)}">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    </div>
-                    <input type="submit" class="btn" value="Login">
-                </form>
-                <p class="toggle-link">Don't have an account? Sign Up</p>
-            `;
-        } else {
-            container.innerHTML = `
-                <h2 id="form-title">Sign Up</h2>
-                <form id="auth-form" method="post" action="../../../BackEnd/auth/register.php?from=${encodeURIComponent(course)}">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    </div>
-                    <input type="submit" class="btn" value="Sign Up">
-                </form>
-                <p class="toggle-link">Already have an account? Login</p>
-            `;
-        }
+toggleLink.addEventListener("click", (e) => {
+    if (e.target.classList.contains("toggle-link") && toggleLink.textContent === "Already have an account? Login") {
+        window.location.href = "../../../BackEnd/auth/check_auth.php?from=" + course;
+    }
+    else{
+        window.location.href = "./signup.html?from=" + course;
     }
 });
-

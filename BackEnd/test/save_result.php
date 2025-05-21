@@ -4,7 +4,7 @@ session_start();
 $userId = $_SESSION['user_id'];
 $courseId = $_GET['id'];
 $score = $_POST['score'];
-$passed = $score >= 10 ? 1 : 0;
+$passed = $score >= 10 ? 1 : 0; 
 $completedAt = date('Y-m-d');
 
 // 1. Check if the user already has a result for this course

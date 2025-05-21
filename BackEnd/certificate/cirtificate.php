@@ -24,6 +24,14 @@ if (!$data || !$data['passed']) {
 $studentName = htmlspecialchars($data['user_name']);
 $courseTitle = htmlspecialchars($data['title']);
 $completedDate = date("F j, Y", strtotime($data['completed_at']));
+function getCurrentUrl() {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' 
+                 || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+    $host     = $_SERVER['HTTP_HOST'];
+    $uri      = $_SERVER['REQUEST_URI'];
+
+    return $protocol . $host . $uri;
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,49 +63,14 @@ $completedDate = date("F j, Y", strtotime($data['completed_at']));
 </div>
 <div class="certificate-actions" style="margin-top: 30px; text-align: center;">
     <button onclick="window.print()" class="btn-print">Print Certificate</button>
-    <button id="download-pdf" class="btn-download">Download as PDF</button>
+    <button id="download-pdf" onclick="downloadPDF()" class="btn-download">Download as PDF</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 <script>
-    document.querySelector('.btn-download').addEventListener('click', () => {
-        const certificate = document.querySelector('.certificate');
-
-        const opt = {
-            margin: 0,
-            filename: 'certificate.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: {
-                scale: 2, // Higher scale = better quality
-                useCORS: true
-            },
-            jsPDF: {
-                unit: 'cm',
-                format: 'a4',
-                orientation: 'landscape' 
-            }
-        };
-
-    const cert = document.querySelector('.certificate');
-    const width = cert.offsetWidth;
-    const height = cert.offsetHeight;
-
-    html2pdf().set({
-        margin: 10,
-        filename: 'certificate.pdf',
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-            scale: 2,
-            useCORS: true
-        },
-        jsPDF: {
-            unit: 'px',
-            format: [width, height],
-            orientation: 'landscape'
-        }
-    }).from(cert).save();
-
-    });
+    function downloadPDF() {
+    window.location.href = "download_pdf.php?id=<?= $courseId ?>";
+}
 </script>
 <script src="./certificate.js"></script>
 </html>
