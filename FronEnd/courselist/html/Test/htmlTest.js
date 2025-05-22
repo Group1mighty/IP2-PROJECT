@@ -73,7 +73,7 @@ function displayResult(score, totalQuestions) {
     const message = document.getElementById("message");
     message.innerHTML = ""; // Clear previous content
 
-    if (score >= 10) {
+    if (score >= 1) {
         message.textContent = "Congratulations! You passed the test. Please screenshot and store your certificate.";
         message.style.color = "green";
 

@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $stmt = 'SELECT id FROM `courses` WHERE title= \''.$course.'\';';
                     $result = $conn->query($stmt);
                     $stmt = $conn->prepare("INSERT INTO enrollment (user_id, course_id) VALUES (?, ?)");
-                    $stmt->bind_param("ii", $_SESSION['user_id'], $result);
+                    $stmt->bind_param("ii", $_SESSION['user_id'], $courseID);
                     $stmt->execute();
                 }
                 header("Location: ../dashbord.php");
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt = 'SELECT id FROM `courses` WHERE title= \''.$course.'\';';
                 $result = $conn->query($stmt);
                 $stmt = $conn->prepare("INSERT INTO enrollment (user_id, course_id) VALUES (?, ?)");
-                $stmt->bind_param("ii", $_SESSION['user_id'], $result);
+                $stmt->bind_param("ii", $_SESSION['user_id'], $courseID);
                 $stmt->execute();
                 }
                 header("Location: ../dashbord.php");
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt = 'SELECT id FROM `courses` WHERE title= \''.$course.'\';';
                 $result = $conn->query($stmt);
                 $stmt = $conn->prepare("INSERT INTO enrollment (user_id, course_id) VALUES (?, ?)");
-                $stmt->bind_param("ii", $_SESSION['user_id'], $result);
+                $stmt->bind_param("ii", $_SESSION['user_id'], $courseID);
                 $stmt->execute();
                 }
                 header("Location: ../dashbord.php");
